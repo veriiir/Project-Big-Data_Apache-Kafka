@@ -1,6 +1,7 @@
 # Project-Big-Data_Apache-Kafka
 
 **Nama**: Veri Rahman
+
 **NRP**: 5027231088
 
 ## **Deskripsi**
@@ -64,12 +65,17 @@ producer_kelembaban.py → Mengirim data kelembaban ke Kafka, contoh:
 ```bash
 bin/kafka-server-start.sh config/kraft/server.properties
 ```
+![Cuplikan layar 2025-05-22 225931](https://github.com/user-attachments/assets/f88b0891-4d46-4412-a265-1d3db21a7119)
+![Cuplikan layar 2025-05-22 225943](https://github.com/user-attachments/assets/bdbf3ef1-e0f0-4803-9f62-3ec6a2685b99)
+
 **2. Membuat Topik Kafka**
 
 ```bash
 bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic sensor-suhu-gudang --partitions 1 --replication-factor 1
 bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic sensor-kelembaban-gudang --partitions 1 --replication-factor 1
 ```
+![Cuplikan layar 2025-05-22 193851](https://github.com/user-attachments/assets/cc587f3c-87f2-4f16-a1f2-013ecd12755b)
+![Cuplikan layar 2025-05-22 193902](https://github.com/user-attachments/assets/e300eca3-5b5d-488e-8607-7eb08ab4683b)
 
 **3. Menjalankan Producer**
 
@@ -77,6 +83,9 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic sensor-ke
 python producer_suhu.py  
 python producer_kelembaban.py  
 ```
+![Cuplikan layar 2025-05-22 221335](https://github.com/user-attachments/assets/c927e88b-5b9b-4c12-96d6-1ed7c21d89d8)
+![Cuplikan layar 2025-05-22 221345](https://github.com/user-attachments/assets/4c7698c6-d818-4588-89ea-6dec200c8cd0)
+
 
 **4. Menjalankan Pyspark Comsumer**
 
@@ -85,6 +94,7 @@ spark-submit consumer_spark.py
 ```
 
 ## **Struktur Folder**
+
 ```bash
 real-time-gudang-monitoring/  
 ├── consumer_spark.py          # Pemrosesan data dengan PySpark 
